@@ -1,0 +1,148 @@
+/*************************
+# -  Styles
+*************************/
+.text-shadow {
+    text-shadow: 0px 2px 6px rgba(29,29,26,0.80);
+}
+.box-shadow:before {
+    content: '';
+    width: 90%;
+    height: 10%;
+    z-index: 0;
+    background: red;
+    position: absolute;
+    left:5%;
+    bottom: 8px;
+    box-shadow: 0px 2px 23px 0px rgba(0,0,0,0.50);
+}
+hr {
+    height: 1px;
+    background: rgba(62,62,62,0.2);
+    border: none;
+    margin: 10px auto;
+    width: 85%;
+    &.black_arrow {
+        background: $black;
+        width: 40%;
+        margin: 16px auto;
+    }
+}
+hr.page_break {
+    height: 10px;
+    background: $congressblue;
+    border: 0;
+    width: 100%;
+    margin: 0 auto;
+}
+nav a {
+    @include transition(0.3s);
+    .no-touch &:hover {
+        opacity: 0.7;
+    }
+
+    &.active {
+        color: $congressblue;
+        text-decoration: underline;
+    }
+
+
+    @include breakpoint(medium only) {
+        ~  {
+            display: block;
+            margin-bottom: 20px;
+        }
+    }
+
+    @include breakpoint(small only) {
+        display: block;
+        margin-bottom: 20px;
+    }
+}
+
+// ** BUTTONS
+.button-pink-with-shadow {
+    background: $pink;
+    @extend .proximabold;
+    color: white;
+    font-size: 14px;
+    padding: 0 40px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 4px 0px 0px rgba(255,35,139,1);
+    -moz-box-shadow: 0px 4px 0px 0px rgba(255,35,139,1);
+    box-shadow: 0px 4px 0px 0px rgba(255,35,139,1);
+    height: 38px;
+    line-height: 38px;
+    @include transition(0.3s);
+
+    &:hover, &:focus {
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        height: 42px;
+        line-height: 42px;
+        color: white;
+    }
+}
+
+/* Do whatever makes sense here.
+   Just know that the svg will be an
+   enormous 100% wide if you don't
+   reign in the width. */
+
+.icon-surreal {
+    width: 57px;
+    height: 9px;
+    vertical-align: 0;
+}
+.icon-logo {
+    width: 160px;
+    height: 57px;
+
+    @include breakpoint(small only) {
+        z-index:101;
+        margin-left: -45px;
+        position: relative;
+    }
+}
+.icon-menu {
+    width: 37px;
+    height: 21px;
+}
+.icon-tiny {
+    width: 25px;
+    height: 25px;
+}
+.icon-characters {
+    width: 53px;
+    height: 36px;
+}
+.icon-characters-thumb {
+    width: 36px;
+    height: 36px;
+}
+.icon-arrows {
+    width: 10px;
+    height: 18px;
+}
+.icon-social {
+    width: 34px;
+    height: 34px;
+    path {@include transition(0.3s);}
+    &:hover path.hover_zone {fill:$pink;}
+}
+.icon-line {
+    width: 1px;
+    height: 42px;
+    vertical-align: 14px;
+}
+.icon-edit_profile {
+    width: 18px;
+    height: 18px;
+    &:hover {
+        svg path {fill: $pink;}
+    }
+}
+.icon-arrow {
+    fill: white;
+    vertical-align: middle;
+}

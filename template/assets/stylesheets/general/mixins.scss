@@ -1,0 +1,165 @@
+/*************************
+# -  Mixins
+*************************/
+//GENERATE BORDER-RADIUS
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+//.box { @include border-radius(10px); }
+//GENERATE BACKGROUND-SIZE
+@mixin background-size($size) {
+    -webkit-background-size: $size !important;
+    -moz-background-size: $size !important;
+    -ms-background-size: $size !important;
+    background-size: $size !important;
+}
+//GENERATE TEXT-SHADOW
+@mixin text-shadow($horizontal, $vertical, $blur, $color) {
+    -webkit-text-shadow: $horizontal $vertical $blur $color;
+    -moz-text-shadow: $horizontal $vertical $blur $color;
+    text-shadow: $horizontal $vertical $blur $color;
+    -ms-text-shadow: $horizontal $vertical $blur $color;
+    -o-text-shadow: $horizontal $vertical $blur $color;
+}
+//GENERATE TRANSFORM-ORIGIN
+@mixin transform-origin($v_h_align) {
+    -webkit-transform-origin: $v_h_align;
+    -moz-transform-origin: $v_h_align;
+    -ms-transform-origin: $v_h_align;
+    transform-origin: $v_h_align;
+}
+//GENERATE OPACITY
+@mixin opacity ($time) {
+    transition: opacity $time ease-in-out;
+    -moz-transition: opacity $time ease-in-out;
+    -webkit-transition: opacity $time ease-in-out;
+}
+//GENERATE TRANSITION
+@mixin transition ($time) {
+    -webkit-transition: all $time ease-in-out;
+    -moz-transition: all $time ease-in-out;
+    -ms-transition: all $time ease-in-out;
+    -o-transition: all $time ease-in-out;
+    transition: all $time ease-in-out;
+}
+//GENERATE TRANSLATE
+@mixin translate ($x, $y) {
+    -webkit-transform: translate($x, $y);
+    -moz-transform: translate($x, $y);
+    -ms-transform: translate($x, $y);
+    -o-transform: translate($x, $y);
+    transform: translate($x, $y);
+}
+//GENERATE ROTATION
+@mixin rotation ($degree) {
+    -moz-transform: rotate($degree);
+    -webkit-transform: rotate($degree);
+    -o-transform: rotate($degree);
+    -ms-transform: rotate($degree);
+    transform: rotate($degree);
+}
+//GENERATE SKEW
+@mixin skew ($xdegree, $ydegree) {
+    -moz-transform: skewX($xdegree) skewY($ydegree);
+    -webkit-transform: skewX($xdegree) skewY($ydegree);
+    -o-transform: skewX($xdegree) skewY($ydegree);
+    -ms-transform: skewX($xdegree) skewY($ydegree);
+    transform: skewX($xdegree) skewY($ydegree);
+}
+@mixin keyframes($animationName) {
+     @-webkit-keyframes #{$animationName}{
+        @content;
+    }
+    @-moz-keyframes #{$animationName} {
+         @content;
+    }
+    @-o-keyframes #{$animationName} {
+         @content;
+    }
+    @keyframes #{$animationName} {
+         @content;
+    }
+}
+/*===========================================================================================
+/*=========================================================================================== CLASSES
+/*=========================================================================================== */
+//Converts px to em's
+$browser-context: 16; // Default
+@function em($pixels, $context: $browser-context) {
+     @return #{$pixels/$context}em
+}
+//----- TEXT-SIZE
+$textsize: 130;
+@while $textsize > 9 {
+    .size#{$textsize} {
+        font-size: #{$textsize/$browser-context}em;
+    }
+    $textsize: $textsize - 1;
+}
+//-----MARGINS-TOP
+$margintop: 300;
+@while $margintop > 9 {
+    .mt-px#{$margintop} {
+        margin-top: #{$margintop/$browser-context}em;
+    }
+    $margintop: $margintop - 10;
+}
+//-----MARGIN-BOTTOM
+$marginbottom: 150;
+@while $marginbottom > 9 {
+    .mb-px#{$marginbottom} {
+        margin-bottom: #{$marginbottom/$browser-context}em;
+    }
+    $marginbottom: $marginbottom - 10;
+}
+//-----PADDING-TOP
+$paddingtop: 300;
+@while $paddingtop > 0 {
+    .pt-px#{$paddingtop} {
+        padding-top: #{$paddingtop/$browser-context}em;
+    }
+    $paddingtop: $paddingtop - 1;
+}
+//-----PADDING-BOTTOM
+$paddingbottom: 200;
+@while $paddingbottom > 0 {
+    .pb-px#{$paddingbottom} {
+        padding-bottom: #{$paddingbottom/$browser-context}em;
+    }
+    $paddingbottom: $paddingbottom - 10;
+}
+//-----PADDING-LEFT
+$paddingleft: 100;
+@while $paddingleft > 0 {
+    .pl-px#{$paddingleft} {
+        padding-left: 1px * $paddingleft;
+    }
+    $paddingleft: $paddingleft - 10;
+}
+//-----PADDING-RIGHT
+$paddingright: 100;
+@while $paddingright > 0 {
+    .pr-px#{$paddingright} {
+        padding-right: 1px * $paddingright;
+    }
+    $paddingright: $paddingright - 10;
+}
+//-----MARGIN-LEFT
+$marginleft: 50;
+@while $marginleft > 0 {
+    .ml-px#{$marginleft} {
+        margin-left: 1px * $marginleft;
+    }
+    $marginleft: $marginleft - 10;
+}
+//-----MARGIN-RIGHT
+$marginright: 50;
+@while $marginright > 0 {
+    .mr-px#{$marginright} {
+        margin-right: 1px * $marginright;
+    }
+    $marginright: $marginright - 10;
+}

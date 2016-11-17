@@ -1,0 +1,15 @@
+{
+    "name": "3k_devops",
+    "authors": [
+        "Joaquim Rosa <joaquimacrosa@outlook.com>",
+    ],
+    "description": "",
+    "main": "",
+    "moduleType": [],
+    "license": "MIT",
+    "homepage": "",
+    "dependencies": {
+        "jquery": "^2.2.3"
+    },
+    "private": true
+}

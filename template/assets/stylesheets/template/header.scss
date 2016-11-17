@@ -1,0 +1,99 @@
+/*************************
+# -  Header
+*************************/
+header {
+    &.main_header {
+        height: 800px;
+        overflow: hidden;
+        background-position: bottom;
+        &:before {
+            content: url('../../images/leafs_left.png');
+            width: 303px;
+            height: 210px;
+            position: absolute;
+            left:0;
+            animation: introLeafs 1s ease forwards;
+            top: -15px;
+        }
+        &:after {
+            content: url('../../images/leafs_right.png');
+            width: 303px;
+            height: 210px;
+            position: absolute;
+            right:-40px;
+            top:-30px;
+            animation: introLeafsRight 1s ease forwards;
+
+            @include breakpoint(small only) {
+                content: url('../../images/cloud_3.png');
+                animation: moveCloudsRight 30s cubic-bezier(.17,.67,.84,.54) infinite;
+                right: 0;
+                left: 0;
+                top: 23%;
+                transform: scale(0.7);
+                margin-left: 100%;
+            }
+        }
+        @include breakpoint(small only) {
+            height: 100vh;
+            min-height: 340px;
+            overflow: visible;
+            background-position: bottom right !important;
+            background-size: 100% !important;
+            background-repeat: no-repeat !important;
+            background: url('../../images/homepage_cover_mobile.jpg');
+
+            .mt-px250 {
+                margin: 35% 0 37% 0;
+            }
+        }
+    }
+
+    h1 {
+        letter-spacing: -0.8px;
+        @include breakpoint(small only) {
+            font-size: 32px !important;
+        }
+    }
+}
+
+nav.main_menu {
+    @include breakpoint(small only) {
+        background: $pearl;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top:0;
+        bottom: 0;
+        text-align: center;
+        padding-top: 55%;
+        z-index: 100;
+        opacity: 0;
+        @include transition(0.3s);
+        @include translate(-100%,0);
+    }
+
+    &.active, &.active a {
+        @include translate(0,0);
+        opacity: 1;
+
+    }
+}
+nav.main_menu a {
+    @include breakpoint(small only) {
+        margin-right: 0 !important;
+        font-size:20px !important;
+        margin-bottom: 30px;
+        @include transition(0.5s);
+        @include translate(-100%,0);
+        &:nth-child(2) {transition-delay: 0.1s;}
+        &:nth-child(3) {transition-delay: 0.2s;}
+    }
+}
+
+.js-menu-toggle {
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    z-index: 101;
+}

@@ -1,0 +1,56 @@
+/*!
+---------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------
+____    __  ___      ______   ______    __       __       _______   ______ .___________. __  ____    ____  _______
+|___ \  |  |/  /     /      | /  __  \  |  |     |  |     |   ____| /      ||           ||  | \   \  /   / |   ____|
+ __) | |  '  /     |  ,----'|  |  |  | |  |     |  |     |  |__   |  ,----'`---|  |----`|  |  \   \/   /  |  |__
+|__ <  |    <      |  |     |  |  |  | |  |     |  |     |   __|  |  |         |  |     |  |   \      /   |   __|
+___) | |  .  \     |  `----.|  `--'  | |  `----.|  `----.|  |____ |  `----.    |  |     |  |    \    /    |  |____
+|____/  |__|\__\     \______| \______/  |_______||_______||_______| \______|    |__|     |__|     \__/     |_______|
+
+
+                        Manufactured Code ®
+                        powered by 3K COLLECTIVE
+
+---------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------
+*/
+/* Import basic foundation */
+@import '../vendor/foundation-sites/scss/util/util';
+@import '../vendor/foundation-sites/scss/global';
+
+/* Initialize foundation */
+@import '../vendor/foundation-sites/scss/grid/grid';
+@import '../vendor/foundation-sites/scss/components/visibility';
+@import '../vendor/foundation-sites/scss/components/table';
+@import '../vendor/foundation-sites/scss/components/float';
+@import '../vendor/foundation-sites/scss/typography/alignment';
+// @import '../vendor/foundation-sites/scss/util/breakpoint';
+// @import '../vendor/foundation-sites/scss/components/reveal';
+
+/* Gutter fix !essential hack! */
+.row .column, .row .columns { padding-left: 0.515rem; padding-right: 0.515rem; }
+
+/* Initialize foundation */
+@include foundation-global-styles;
+@include foundation-grid;
+@include foundation-visibility-classes;
+@include foundation-text-alignment;
+// @include foundation-reveal;
+@include foundation-float-classes;
+@include foundation-table;
+
+/* Import our own global variables */
+@import './general/animations.scss';
+@import './general/_global.scss';
+
+/* Templates */
+@import './template/template';
+
+/* Content */
+@import './structure/structure';
+
+/* Import vendors */
+// $entypoPlusWebfontPath: '../../vendor/entypo-plus/fonts' !default;
+@import '../vendor/slick-carousel/slick/slick.scss';
+// @import '../vendor/entypo-plus/scss/entypo-plus';

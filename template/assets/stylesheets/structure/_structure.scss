@@ -1,0 +1,22 @@
+body,
+html {
+    font-size: 16px;
+    color: $black;
+    overflow-x: hidden;
+    @include breakpoint(medium down) {
+        font-size: 14px;
+    }
+    @include breakpoint(small only) {
+        p {font-size:18px;}
+    }
+}
+//Set a max-width for our grid
+.row {
+    max-width: 90rem;
+    @include breakpoint(medium down) {
+        max-width: 90%;
+    }
+}
+@import './homepage';
+@import './books';
+@import './book';
